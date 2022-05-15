@@ -1,4 +1,4 @@
-import MainRouter from './config/routes';
+import MainRouter from './routes';
 import { AuthProvider } from './context/authContext';
 
 function App() {

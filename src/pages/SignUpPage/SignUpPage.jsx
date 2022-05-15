@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './SignUpPage.styles.scss';
 
 function SignUpPage() {
   const { signup } = useAuth();
@@ -9,6 +10,7 @@ function SignUpPage() {
   const [user, setUser] = useState({
     name: '',
     last: '',
+    username: '',
     email: '',
     password: '',
   });
@@ -34,21 +36,25 @@ function SignUpPage() {
   };
 
   return (
-    <>
+    <section className="signuppage">
       <h1>Registro</h1>
       { error ? (<p>{error}</p>) : (null) }
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="signuppage__form">
         <label htmlFor="name">
           Nombre:
-          <input name="name" id="name" type="text" placeholder="Nombre" onChange={handleChange} />
+          <input name="name" id="name" type="text" placeholder=" Nombre" onChange={handleChange} />
         </label>
         <label htmlFor="last">
           Apellido:
-          <input name="last" id="last" type="text" placeholder="Apellido" onChange={handleChange} />
+          <input name="last" id="last" type="text" placeholder=" Apellido" onChange={handleChange} />
+        </label>
+        <label htmlFor="user">
+          Nombre de usuario:
+          <input name="user" id="user" type="text" placeholder=" Usuario" onChange={handleChange} />
         </label>
         <label htmlFor="email">
           Email:
-          <input name="email" id="email" type="email" placeholder="tuemail@mail.com" onChange={handleChange} />
+          <input name="email" id="email" type="email" placeholder=" tuemail@mail.com" onChange={handleChange} />
         </label>
         <label htmlFor="email">
           Contraseña:
@@ -56,7 +62,7 @@ function SignUpPage() {
         </label>
         <input type="submit" value="Submit" />
       </form>
-    </>
+    </section>
   );
 }
 

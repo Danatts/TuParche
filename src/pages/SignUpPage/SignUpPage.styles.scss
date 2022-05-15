@@ -1,0 +1,23 @@
+@import '../../styles/palette';
+
+.signuppage {
+  padding: 3rem;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    gap: 2rem;
+
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      border: $primary 0.2rem solid;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+    }
+  }
+}
