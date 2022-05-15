@@ -1,0 +1,34 @@
+@import '../../styles/palette';
+
+.loginpage {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+    font-weight: 700;
+    gap: 0.5rem;
+  }
+
+  &__input {
+    border: $primary solid 0.2rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    height: 4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &__subtitle {
+    margin: 2rem 0rem;
+    text-align: center;
+  }
+}

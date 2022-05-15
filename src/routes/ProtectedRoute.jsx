@@ -13,7 +13,7 @@ function ProtectedRoute({ children }) {
 }
 
 ProtectedRoute.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.element,
 };
 
 ProtectedRoute.defaultProps = {

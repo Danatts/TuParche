@@ -19,6 +19,7 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "react/jsx-no-constructed-context-values": "warn"
+        "react/jsx-no-constructed-context-values": "warn",
+        "react/button-has-type": "off"
     }
 }

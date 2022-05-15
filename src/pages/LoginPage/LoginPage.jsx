@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Alert from '../../components/Alert/Alert';
+import Button from '../../components/Button/Button';
 import useAuth from '../../hooks/useAuth';
+import google from '../../assets/icons/logo_google.png';
+import './LoginPage.styles.scss';
 
 function LoginPage() {
   const { login, loginGoogle } = useAuth();
@@ -41,21 +45,39 @@ function LoginPage() {
   };
 
   return (
-    <section>
-      <h1>Inicia sesión</h1>
-      { error ? (<p>{error}</p>) : (null) }
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email:
-          <input name="email" id="email" type="email" placeholder=" tuemail@mail.com" onChange={handleChange} />
+    <section className="loginpage">
+      <form className="loginpage__form" onSubmit={handleSubmit} id="loginform">
+        <label className="loginpage__label" htmlFor="email">
+          <input
+            className="loginpage__input"
+            name="email"
+            id="email"
+            type="email"
+            placeholder="Correo electrónico"
+            onChange={handleChange}
+          />
         </label>
-        <label htmlFor="email">
-          Contraseña:
-          <input name="password" id="password" type="password" onChange={handleChange} />
+        <label className="loginpage__label" htmlFor="email">
+          <input
+            className="loginpage__input"
+            name="password"
+            id="password"
+            type="password"
+            placeholder="Contraseña"
+            onChange={handleChange}
+          />
+          { error ? (<Alert message={error} />) : (null) }
         </label>
-        <input type="submit" value="Submit" />
+        <Button type="submit" text="Inicar sesión" />
       </form>
-      <button type="button" onClick={handleGoogle}>Login with Google</button>
+      <h2 className="loginpage__subtitle"> o </h2>
+      <Button
+        type="button"
+        handleEffect={handleGoogle}
+        text="Iniciar sesión"
+        icon={google}
+        design="buttonbrand"
+      />
     </section>
   );
 }
