@@ -31,7 +31,7 @@ function SignUpPage() {
     e.preventDefault();
     try {
       await signup(user.email, user.password);
-      navigate('/');
+      navigate('/login');
     } catch (err) {
       setError(err.message);
     }
