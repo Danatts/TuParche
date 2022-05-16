@@ -1,23 +1,50 @@
 @import '../../styles/palette';
 
 .signuppage {
-  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
 
   &__form {
     display: flex;
     flex-direction: column;
-    font-size: 1.7rem;
     gap: 2rem;
+  }
 
-    label {
-      display: flex;
-      flex-direction: column;
-    }
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
 
-    input {
-      border: $primary 0.2rem solid;
-      border-radius: 1rem;
-      font-size: 1.5rem;
-    }
+  &__input {
+    border: $primary solid 0.2rem;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0, 0.4) ;
+    font-size: 1.5rem;
+    height: 4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &__linkgroup {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 600;
+    justify-content: center;
+    margin: 1.7rem 0rem 0rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__linktext {
+    color: $tertiary;
+  }
+
+  &__separator {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1.5rem 0rem;
+    text-align: center;
   }
 }

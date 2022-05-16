@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -21,12 +22,16 @@ export function AuthProvider({ children }) {
 
   const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-  const loginGoogle = async () => {
+  const loginGoogle = () => {
     const googleProvider = new GoogleAuthProvider();
-    await signInWithPopup(auth, googleProvider);
+    signInWithPopup(auth, googleProvider);
   };
 
   const logout = () => signOut(auth);
+
+  const resetPassword = (email) => {
+    sendPasswordResetEmail(auth, email);
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -37,7 +42,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={{
-      login, signup, user, logout, loading, loginGoogle,
+      login, signup, user, logout, loading, loginGoogle, resetPassword,
     }}
     >
       {children}

@@ -5,8 +5,8 @@ function Button({
   text, type, icon, design, handleEffect,
 }) {
   return (
-    <button className={design} type={type} onClick={handleEffect}>
-      { icon ? (<img className="buttonbrand__icon" src={icon} alt="google" />) : null}
+    <button className={`button button--${design}`} type={type} onClick={handleEffect}>
+      { icon ? (<img className="button__icon" src={icon} alt="brand" />) : null}
       { text }
     </button>
   );
@@ -24,7 +24,7 @@ Button.defaultProps = {
   text: 'Click',
   type: 'button',
   icon: null,
-  design: 'button',
+  design: 'default',
   handleEffect: null,
 };
 

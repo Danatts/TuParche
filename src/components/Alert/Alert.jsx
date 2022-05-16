@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import './Alert.styles.scss';
 
 function Alert({ message }) {
   return (
-    <p>{message}</p>
+    <p className="alert">{message}</p>
   );
 }
 

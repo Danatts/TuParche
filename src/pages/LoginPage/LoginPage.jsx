@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
 import useAuth from '../../hooks/useAuth';
@@ -7,7 +7,7 @@ import google from '../../assets/icons/logo_google.png';
 import './LoginPage.styles.scss';
 
 function LoginPage() {
-  const { login, loginGoogle } = useAuth();
+  const { login, loginGoogle, resetPassword } = useAuth();
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -44,6 +44,16 @@ function LoginPage() {
     }
   };
 
+  const handleResetPassword = async () => {
+    if (!user.email) return setError('Por favor, digite su correo');
+    try {
+      await resetPassword(user.email);
+      return setError('Se ha enviado un correo con un link para reestablecer tu contraseña');
+    } catch (err) {
+      return setError(err.message);
+    }
+  };
+
   return (
     <section className="loginpage">
       <form className="loginpage__form" onSubmit={handleSubmit} id="loginform">
@@ -66,17 +76,25 @@ function LoginPage() {
             placeholder="Contraseña"
             onChange={handleChange}
           />
-          { error ? (<Alert message={error} />) : (null) }
         </label>
+        { error ? (<Alert message={error} />) : (null) }
         <Button type="submit" text="Inicar sesión" />
       </form>
-      <h2 className="loginpage__subtitle"> o </h2>
+      <div className="loginpage__linkgroup">
+        <a href="#!" onClick={handleResetPassword} className="loginpage__linktext loginpage__link">
+          ¿Olvidaste tu contraseña?
+        </a>
+        <Link className="loginpage__link" to="/signup">
+          <p className="loginpage__linktext">Regístrate</p>
+        </Link>
+      </div>
+      <p className="loginpage__separator"> o </p>
       <Button
         type="button"
         handleEffect={handleGoogle}
         text="Iniciar sesión"
         icon={google}
-        design="buttonbrand"
+        design="google"
       />
     </section>
   );
