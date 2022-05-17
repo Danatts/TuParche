@@ -31,10 +31,10 @@ function Sidebar({ toggle }) {
         </span>
         <div className="sidebar__content">
           <div className="sidebar__linkgroup">
-            <NavLink onClick={toggle} to={HOME_ROUTE} className="sidebar__link">Inicio</NavLink>
-            <NavLink onClick={toggle} to={EXPLORE_ROUTE} className="sidebar__link">Explorar</NavLink>
-            <NavLink onClick={toggle} to={EVENTS_ROUTE} className="sidebar__link">Mis Parches</NavLink>
-            <NavLink onClick={toggle} to={PROFILE_ROUTE} className="sidebar__link">Perfil</NavLink>
+            <NavLink to={HOME_ROUTE} className="sidebar__link">Inicio</NavLink>
+            <NavLink to={EXPLORE_ROUTE} className="sidebar__link">Explorar</NavLink>
+            <NavLink to={EVENTS_ROUTE} className="sidebar__link">Mis Parches</NavLink>
+            <NavLink to={PROFILE_ROUTE} className="sidebar__link">Perfil</NavLink>
           </div>
           <a href="#!" onClick={handleLogout} className="sidebar__link">Cerrar sesión</a>
         </div>

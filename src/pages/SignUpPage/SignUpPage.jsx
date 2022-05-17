@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { createUser } from '../../services/user.services';
 import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
 import { LOGIN_ROUTE } from '../../routes/routes';
@@ -14,7 +13,6 @@ function SignUpPage() {
   const [user, setUser] = useState({
     name: '',
     last: '',
-    username: '',
     email: '',
     password: '',
   });
@@ -33,7 +31,6 @@ function SignUpPage() {
     e.preventDefault();
     try {
       await signup(user.email, user.password);
-      await createUser(user);
       navigate(LOGIN_ROUTE);
     } catch (err) {
       setError(err.message);
@@ -59,16 +56,6 @@ function SignUpPage() {
             id="last"
             type="text"
             placeholder="Apellido"
-            onChange={handleChange}
-            className="signuppage__input"
-          />
-        </label>
-        <label className="signuppage__label" htmlFor="username">
-          <input
-            name="username"
-            id="username"
-            type="text"
-            placeholder="Usuario"
             onChange={handleChange}
             className="signuppage__input"
           />

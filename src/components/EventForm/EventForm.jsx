@@ -35,7 +35,7 @@ function EventForm() {
       </label>
       <label htmlFor="date">
         <input
-          type="date"
+          type="datetime-local"
           name="date"
           id="date"
           placeholder="Fecha"
