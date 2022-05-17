@@ -11,7 +11,6 @@ export const createEvent = async (event) => {
   const docRef = await addDoc(collection(db, 'event'), {
     ...event,
   });
-  console.log(docRef);
   return docRef;
 };
 
@@ -23,5 +22,5 @@ export const getEvents = async () => {
 export const getSingleDocument = async () => {
   const docRef = doc(db, 'event', 'vZ6TpeTppeWGHWc4Y2D3');
   const docSnap = await getDoc(docRef);
-  console.log({ id: docSnap.id, ...docSnap.data() });
+  return docSnap;
 };

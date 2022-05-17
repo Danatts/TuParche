@@ -4,13 +4,12 @@ import useAuth from '../../hooks/useAuth';
 import Footer from '../../components/Footer/Footer';
 import { getSingleDocument } from '../../services/event.services';
 import './HomePage.styles.scss';
+import MapView from '../../components/MapView/MapView';
 
 function HomePage() {
-  const { user, loading } = useAuth();
+  const { loading } = useAuth();
 
   if (loading) return <h1>Loading...</h1>;
-
-  console.log(user);
 
   const handleGetEvents = async () => {
     await getSingleDocument();
@@ -22,6 +21,7 @@ function HomePage() {
         <Header />
         <EventForm />
         <button onClick={handleGetEvents}>Leer eventos</button>
+        <MapView />
       </div>
       <Footer />
     </>
