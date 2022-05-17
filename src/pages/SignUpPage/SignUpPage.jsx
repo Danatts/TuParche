@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { createUser } from '../../services/user.services';
 import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
+import { LOGIN_ROUTE } from '../../routes/routes';
 import useAuth from '../../hooks/useAuth';
 import './SignUpPage.styles.scss';
 
@@ -31,7 +33,8 @@ function SignUpPage() {
     e.preventDefault();
     try {
       await signup(user.email, user.password);
-      navigate('/login');
+      await createUser(user);
+      navigate(LOGIN_ROUTE);
     } catch (err) {
       setError(err.message);
     }
@@ -60,10 +63,10 @@ function SignUpPage() {
             className="signuppage__input"
           />
         </label>
-        <label className="signuppage__label" htmlFor="user">
+        <label className="signuppage__label" htmlFor="username">
           <input
-            name="user"
-            id="user"
+            name="username"
+            id="username"
             type="text"
             placeholder="Usuario"
             onChange={handleChange}
@@ -94,7 +97,7 @@ function SignUpPage() {
         <Button type="submit" text="Regístrate" />
       </form>
       <div className="signuppage__linkgroup">
-        <Link className="signuppage__link" to="/login">
+        <Link className="signuppage__link" to={LOGIN_ROUTE}>
           <p className="signuppage__linktext">¿Ya tienes una cuenta?</p>
         </Link>
       </div>

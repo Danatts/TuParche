@@ -4,6 +4,7 @@ import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
 import useAuth from '../../hooks/useAuth';
 import google from '../../assets/icons/logo_google.png';
+import { HOME_ROUTE, SIGNUP_ROUTE } from '../../routes/routes';
 import './LoginPage.styles.scss';
 
 function LoginPage() {
@@ -29,7 +30,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       await login(user.email, user.password);
-      navigate('/');
+      navigate(HOME_ROUTE);
     } catch (err) {
       setError(err.message);
     }
@@ -38,7 +39,7 @@ function LoginPage() {
   const handleGoogle = async () => {
     try {
       await loginGoogle();
-      navigate('/');
+      navigate(HOME_ROUTE);
     } catch (err) {
       setError(err.message);
     }
@@ -81,11 +82,11 @@ function LoginPage() {
         <Button type="submit" text="Inicar sesión" />
       </form>
       <div className="loginpage__linkgroup">
-        <a href="#!" onClick={handleResetPassword} className="loginpage__linktext loginpage__link">
+        <a href="#!" onClick={handleResetPassword} className="loginpage__link">
           ¿Olvidaste tu contraseña?
         </a>
-        <Link className="loginpage__link" to="/signup">
-          <p className="loginpage__linktext">Regístrate</p>
+        <Link className="loginpage__link" to={SIGNUP_ROUTE}>
+          Regístrate
         </Link>
       </div>
       <p className="loginpage__separator"> o </p>

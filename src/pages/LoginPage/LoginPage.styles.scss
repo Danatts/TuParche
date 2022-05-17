@@ -34,11 +34,8 @@
   }
 
   &__link {
-    text-decoration: none;
-  }
-
-  &__linktext {
     color: $tertiary;
+    text-decoration: none;
   }
 
   &__separator {
