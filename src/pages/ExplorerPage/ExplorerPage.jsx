@@ -1,11 +1,11 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import './ProfilePage.styles.scss';
+import './ExplorerPage.styles.scss';
 
-function ProfilePage() {
+function ExplorerPage() {
   return (
     <>
-      <div className="profilepage">
+      <div className="explorerpage">
         <Header />
       </div>
       <Footer />
@@ -13,4 +13,4 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+export default ExplorerPage;

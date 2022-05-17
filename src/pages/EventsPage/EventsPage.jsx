@@ -1,11 +1,11 @@
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import './ProfilePage.styles.scss';
+import './EventsPage.styles.scss';
 
-function ProfilePage() {
+function EventsPage() {
   return (
     <>
-      <div className="profilepage">
+      <div className="eventspage">
         <Header />
       </div>
       <Footer />
@@ -13,4 +13,4 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+export default EventsPage;

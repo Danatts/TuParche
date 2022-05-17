@@ -4,6 +4,8 @@ import LoginPage from '../pages/LoginPage/LoginPage';
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import HomePage from '../pages/HomePage/HomePage';
 import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import ExplorerPage from '../pages/ExplorerPage/ExplorerPage';
+import EventsPage from '../pages/EventsPage/EventsPage';
 import {
   SIGNUP_ROUTE,
   LOGIN_ROUTE,
@@ -31,7 +33,7 @@ function MainRouter() {
           path={EXPLORE_ROUTE}
           element={(
             <ProtectedRoute>
-              <ProfilePage />
+              <ExplorerPage />
             </ProtectedRoute>
           )}
         />
@@ -39,7 +41,7 @@ function MainRouter() {
           path={EVENTS_ROUTE}
           element={(
             <ProtectedRoute>
-              <ProfilePage />
+              <EventsPage />
             </ProtectedRoute>
           )}
         />

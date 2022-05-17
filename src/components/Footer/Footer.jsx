@@ -15,7 +15,7 @@ function Footer() {
             target="_blank"
             className="footer__link"
           >
-            Github
+            GitHub
           </a>
           <a
             rel="noreferrer"
