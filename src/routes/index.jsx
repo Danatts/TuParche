@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import ProfilePage from '../pages/ProfilePage/ProfilePage';
 import ExplorerPage from '../pages/ExplorerPage/ExplorerPage';
 import EventsPage from '../pages/EventsPage/EventsPage';
+import EventFormPage from '../pages/EventFormPage/EventFormPage';
 import {
   SIGNUP_ROUTE,
   LOGIN_ROUTE,
@@ -13,6 +14,7 @@ import {
   PROFILE_ROUTE,
   EXPLORE_ROUTE,
   EVENTS_ROUTE,
+  CREATEEVENT_ROUTE,
 } from './routes';
 
 function MainRouter() {
@@ -50,6 +52,14 @@ function MainRouter() {
           element={(
             <ProtectedRoute>
               <ProfilePage />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path={CREATEEVENT_ROUTE}
+          element={(
+            <ProtectedRoute>
+              <EventFormPage />
             </ProtectedRoute>
           )}
         />

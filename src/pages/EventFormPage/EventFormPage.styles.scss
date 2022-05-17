@@ -1,0 +1,36 @@
+@import '../../styles/palette';
+
+.eventform {
+  margin: 4rem 2rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0rem;
+  }
+
+  &__input {
+    border: $primary solid 0.2rem;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0, 0.4);
+    font-size: 1.2rem;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  &__textarea {
+    border: $primary solid 0.2rem;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0, 0.4);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  &__nextto {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
