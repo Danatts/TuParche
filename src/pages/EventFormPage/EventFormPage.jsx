@@ -44,6 +44,7 @@ function EventFormPage() {
     <div className="eventform">
       <Button text="&#8592; Volver" type="button" handleEffect={handleBack} />
       <form className="eventform__content" onSubmit={handleSubmit}>
+        <h1 className="eventform__title">ARMA TU PLAN</h1>
         <label className="eventform__label" htmlFor="title">
           <input
             className="eventform__input"

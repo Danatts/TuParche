@@ -9,13 +9,18 @@
     gap: 2rem;
     margin: 3rem 0rem;
   }
+  
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
 
   &__input {
     border: $primary solid 0.2rem;
     border-radius: 2rem;
     box-shadow: 0.3rem 0.3rem 0.5rem rgb(0, 0, 0, 0.4);
-    font-size: 1.2rem;
-    height: 3rem;
+    font-size: 1.3rem;
+    height: 4rem;
     padding: 0.5rem 1rem;
     width: 100%;
   }

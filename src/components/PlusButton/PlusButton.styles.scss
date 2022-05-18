@@ -1,0 +1,27 @@
+@import '../../styles/palette';
+
+.plusbutton {
+  align-items: center;
+  background-color: $primary;
+  bottom: 2rem;
+  border-color: $secondary;
+  border-radius: 7rem;
+  color: $secondary;
+  cursor: pointer;
+  display: flex;
+  font-size: 5rem;
+  font-weight: bolder;
+  height: 7rem;
+  justify-content: center;
+  position: fixed;
+  right: 2rem;
+  width: 7rem;
+
+  &:hover {
+    scale: 1.05;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+}
