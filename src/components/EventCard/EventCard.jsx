@@ -11,7 +11,7 @@ function EventCard({ doc }) {
         <p className="eventcard__text">{doc.date}</p>
       </div>
       <div className="eventcard__footer">
-        <p>{doc.emailCreator}</p>
+        <p>{doc.creator}</p>
         <div className="eventcard__attendees">
           <img src={person} alt="person_icon" className="eventcard__icon" />
           <p>{`0/${doc.numPeople}`}</p>
