@@ -5,9 +5,8 @@ import './ProfilePage.styles.scss';
 function ProfilePage() {
   return (
     <>
-      <div className="profilepage">
-        <Header />
-      </div>
+      <Header />
+      <div className="profilepage" />
       <Footer />
     </>
   );

@@ -1,0 +1,44 @@
+@import '../../styles/palette';
+
+.eventcard {
+  border: $primary 0.3rem solid;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+  }
+
+  &__attendees {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__icon {
+    width: 2rem;
+  }
+
+  &__footer{
+    align-items: center;
+    background-color: $primary;
+    border-top: 0.1rem $primary solid;
+    color: $secondary;
+    display: flex;
+    font-size: 1.7rem;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+}

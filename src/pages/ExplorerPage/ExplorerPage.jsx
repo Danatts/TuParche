@@ -5,9 +5,8 @@ import './ExplorerPage.styles.scss';
 function ExplorerPage() {
   return (
     <>
-      <div className="explorerpage">
-        <Header />
-      </div>
+      <Header />
+      <div className="explorerpage" />
       <Footer />
     </>
   );

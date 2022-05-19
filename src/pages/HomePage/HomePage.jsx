@@ -15,8 +15,8 @@ function HomePage() {
 
   return (
     <>
+      <Header />
       <div className="homepage">
-        <Header />
         <button onClick={handleGetEvents}>Leer eventos</button>
       </div>
       <Footer />

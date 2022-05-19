@@ -55,6 +55,16 @@ function EventFormPage() {
             onChange={handleChange}
           />
         </label>
+        <label className="eventform__label" htmlFor="city">
+          <input
+            className="eventform__input"
+            type="text"
+            name="city"
+            id="city"
+            placeholder="Ciudad"
+            onChange={handleChange}
+          />
+        </label>
         <div className="eventform__nextto">
           <label className="eventform__label" htmlFor="date">
             <input
