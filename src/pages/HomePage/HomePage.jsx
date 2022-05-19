@@ -1,7 +1,6 @@
 import Header from '../../components/Header/Header';
-import useAuth from '../../hooks/useAuth';
 import Footer from '../../components/Footer/Footer';
-import { getSingleDocument } from '../../services/event.services';
+import useAuth from '../../hooks/useAuth';
 import './HomePage.styles.scss';
 
 function HomePage() {
@@ -9,15 +8,11 @@ function HomePage() {
 
   if (loading) return <h1>Loading...</h1>;
 
-  const handleGetEvents = async () => {
-    await getSingleDocument();
-  };
-
   return (
     <>
       <Header />
       <div className="homepage">
-        <button onClick={handleGetEvents}>Leer eventos</button>
+        <h1>Welcome</h1>
       </div>
       <Footer />
     </>

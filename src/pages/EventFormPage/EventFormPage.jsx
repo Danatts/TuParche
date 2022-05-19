@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '../../components/Alert/Alert';
 import Button from '../../components/Button/Button';
+import useAuth from '../../hooks/useAuth';
 import { EVENTS_ROUTE } from '../../routes/routes';
 import { createEvent } from '../../services/event.services';
 import './EventFormPage.styles.scss';
@@ -9,14 +10,15 @@ import './EventFormPage.styles.scss';
 function EventFormPage() {
   const navigate = useNavigate();
 
-  const [event, setEvent] = useState({
-    title: '',
-  });
+  const { user } = useAuth();
+
+  const [event, setEvent] = useState({});
 
   const [notice, setNotice] = useState(null);
 
   const handleChange = (e) => {
     setEvent({
+      emailCreator: user.email,
       ...event,
       [e.target.name]: e.target.value,
     });
