@@ -11,8 +11,6 @@ function SignUpPage() {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    name: '',
-    last: '',
     email: '',
     password: '',
   });
@@ -40,26 +38,6 @@ function SignUpPage() {
   return (
     <section className="signuppage">
       <form onSubmit={handleSubmit} className="signuppage__form">
-        <label className="signuppage__label" htmlFor="name">
-          <input
-            name="name"
-            id="name"
-            type="text"
-            placeholder="Nombre"
-            onChange={handleChange}
-            className="signuppage__input"
-          />
-        </label>
-        <label className="signuppage__label" htmlFor="last">
-          <input
-            name="last"
-            id="last"
-            type="text"
-            placeholder="Apellido"
-            onChange={handleChange}
-            className="signuppage__input"
-          />
-        </label>
         <label className="signuppage__label" htmlFor="email">
           <input
             name="email"
