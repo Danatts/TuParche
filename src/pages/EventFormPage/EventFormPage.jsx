@@ -18,7 +18,7 @@ function EventFormPage() {
 
   const handleChange = (e) => {
     setEvent({
-      emailCreator: user.email,
+      creator: user.displayName,
       ...event,
       [e.target.name]: e.target.value,
     });
