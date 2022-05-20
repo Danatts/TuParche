@@ -14,7 +14,7 @@ function EventCard({ doc }) {
         <p>{doc.creator}</p>
         <div className="eventcard__attendees">
           <img src={person} alt="person_icon" className="eventcard__icon" />
-          <p>{`0/${doc.numPeople}`}</p>
+          <p>{`${doc.attendees.length}/${doc.numPeople}`}</p>
         </div>
       </div>
     </div>
